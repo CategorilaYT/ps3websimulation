@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08111f">
+  <title>PlayStation 3 XMB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="boot-screen" id="boot-screen" aria-hidden="true">
+    <div class="boot-screen__glow"></div>
+    <div class="boot-screen__logo-block">
+      <p class="boot-screen__sony">Sony Computer Entertainment</p>
+      <h1 class="boot-screen__logo">PLAYSTATION 3</h1>
+      <p class="boot-screen__sub">Computer Entertainment System</p>
+    </div>
+  </div>
+
+  <main class="app app--hidden" id="app" aria-label="Simulacao da XrossMediaBar do PlayStation 3">
+    <canvas class="background-canvas" id="background-canvas"></canvas>
+
+    <div class="background-vignette"></div>
+    <div class="background-particles" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <header class="hud">
+      <div class="hud__left">
+        <span class="hud__brand">PLAYSTATION 3</span>
+        <span class="hud__dot"></span>
+        <span class="hud__subbrand">XrossMediaBar</span>
+      </div>
+
+      <div class="hud__right">
+        <div class="hud-chip">
+          <span class="hud-chip__icon hud-chip__icon--message"></span>
+          <span id="message-count">03</span>
+        </div>
+        <div class="hud-chip">
+          <span class="hud-chip__icon hud-chip__icon--user"></span>
+          <span id="active-user-label">Conta dos manos fatais</span>
+        </div>
+        <div class="hud-clock">
+          <span id="system-date">quinta-feira, 26/03</span>
+          <strong id="system-time">00:00</strong>
+        </div>
+      </div>
+    </header>
+
+    <section class="shell" id="shell">
+      <nav class="xmb-categories" id="xmb-categories" aria-label="Categorias principais"></nav>
+
+      <section class="xmb-stage">
+        <aside class="xmb-user-panel">
+          <div class="xmb-user-panel__avatar" id="user-avatar">H</div>
+          <div>
+            <p class="xmb-user-panel__eyebrow">Usuario conectado</p>
+            <h2 class="xmb-user-panel__name" id="user-name">Conta dos manos fatais</h2>
+            <p class="xmb-user-panel__meta" id="input-mode">Teclado / Mouse</p>
+          </div>
+        </aside>
+
+        <section class="xmb-column-area">
+          <div class="xmb-column" id="xmb-column" aria-live="polite"></div>
+        </section>
+
+        <aside class="xmb-context">
+          <p class="xmb-context__category" id="context-category">Usuarios</p>
+          <h1 class="xmb-context__title" id="context-title">Conta dos manos fatais</h1>
+          <p class="xmb-context__subtitle" id="context-subtitle">Entrar</p>
+          <p class="xmb-context__description" id="context-description">
+            Acessa o perfil principal salvo neste console.
+          </p>
+
+          <div class="xmb-context__cards">
+            <div class="context-card">
+              <span class="context-card__label">Tema atual</span>
+              <strong class="context-card__value" id="theme-label">Noite oceano</strong>
+            </div>
+            <div class="context-card">
+              <span class="context-card__label">Mensagens</span>
+              <strong class="context-card__value" id="context-messages">3 novas</strong>
+            </div>
+            <div class="context-card">
+              <span class="context-card__label">Atalho</span>
+              <strong class="context-card__value">T para opcoes</strong>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </section>
+
+    <section class="panel-view panel-view--hidden" id="panel-view" aria-live="polite">
+      <div class="panel-view__chrome">
+        <p class="panel-view__eyebrow" id="panel-eyebrow">Sistema</p>
+        <h2 class="panel-view__title" id="panel-title">Painel</h2>
+        <p class="panel-view__body" id="panel-body"></p>
+        <div class="panel-view__list" id="panel-list"></div>
+      </div>
+    </section>
+
+    <aside class="options-menu options-menu--hidden" id="options-menu" aria-hidden="true">
+      <div class="options-menu__glass">
+        <p class="options-menu__title">Opcoes</p>
+        <div class="options-menu__items" id="options-menu-items"></div>
+      </div>
+    </aside>
+
+    <section class="notification-stack" id="notification-stack" aria-live="polite"></section>
+
+    <footer class="help-bar">
+      <div class="help-bar__group">
+        <span>&larr; &rarr; categorias</span>
+        <span>&uarr; &darr; itens</span>
+        <span>Enter selecionar</span>
+      </div>
+      <div class="help-bar__group">
+        <span>Esc voltar</span>
+        <span>T menu de opcoes</span>
+        <span>Gamepad suportado</span>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
